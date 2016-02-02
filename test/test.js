@@ -1,9 +1,9 @@
-var index = require("./lib/module-file.js");
+var index = require("../lib/module-file.js");
 
-var assert = require('./utils/assert')
-var data = require('./data/data')
-var expectedArrayOfArrays = require('./data/array-of-arrays')
-var expectedFormattedDates = require('./data/formatted-dates')
+var assert = require('./assert')
+var data = require('../data/data')
+var expectedArrayOfArrays = require('../data/array-of-arrays')
+var expectedFormattedDates = require('../data/formatted-dates')
 
 
 function isEmail (str) {
@@ -17,6 +17,16 @@ function isEmail (str) {
 function filterStringsWithCommas (str) {
 return str.indexOf(',') > 1;
 
+}
+
+function isNumber (thing) {
+  // if (typeof thing === Number) {
+  if (typeof thing === "number") {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 function isDate (str) {
@@ -33,6 +43,13 @@ function map (func, arr) {
 
   return results
 }
+
+var meaningOfLife = '42'
+var expectedType = 'string'
+
+var mixedArray = [1, '21', null, Date.now(), 5, meaningOfLife, 42]
+var expectedNumberCount = 4 // why are there 4 expected number data-types?  What are they?
+var expectedStringCount = 2
 
 var numberCount = index.countIf(isNumber, mixedArray)
 var stringCount = index.countIf(function (x) { return typeof x === 'string' }, mixedArray)

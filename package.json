@@ -1,7 +1,7 @@
 {
   "name": "andi-utils",
   "version": "0.0.0",
-  "description": "",
+  "description": "a utility library",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -17,5 +17,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/andi-crb/andi-utils/issues"
+  },
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "js-object-pretty-print": "^0.2.0",
+    "node-emoji": "^1.0.4"
   }
 }
